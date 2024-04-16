@@ -1,0 +1,70 @@
+/*
+  Localizable.strings
+  VassQuick_iOS
+
+  Created by Daniel Cazorro Frias  on 17/3/24.
+  
+*/
+
+"create_account_registration" = "Registrarse";
+"create_account_nick" = "Nombre de usuario";
+"create_account_login" = "Correo";
+"create_account_password" = "Contraseña";
+"create_account_password_repeat" = "Repetir contraseña";
+"create_account_sign_up_button" = "Registrarse";
+"create_account_already_text" = "¿Ya tienes cuenta?";
+"create_account_i_have_an_account_text" = "Ya tengo una cuenta";
+"create_account_alert_acount_created" = "Cuenta Creada";
+"create_account_alert_contratulations_text" = "Enhorabuena, tu cuenta ha sido creada correctamente";
+"create_account_acept" = "Acepto";
+"create_account_terms_and_conditions" = "Términos y condiciones";
+"create_account_alert" = "Alerta";
+"create_account_error" = "Error, inténtelo de nuevo";
+"create_account_web_view_back" = "Volver";
+"create_account_login_back" = "Acceder";
+"chat_list_view_controller_view_profile" = "Ver Perfil";
+"chat_list_view_controller_log_out" = "Cerrar Sesión";
+"chat_list_view_controller_cancel" = "Cancelar";
+"chat_list_view_controller_delete_chat" = "Borrar";
+"chat_list_view_controller_search_bar_placeholder" = "Buscar chat";
+"chat_list_view_controller_refresh" = "Refrescando...";
+"cell_chat_list_view_table_view_cell_message_empty" = "Ningún mensaje";
+"login_view_controller_not_an_account" = "¿No tienes cuenta?";
+"login_view_controller_nickname" = "Acceder";
+"login_view_controller_placeholder_login" = "Login";
+"login_view_controller_placeholder_password" = "Contraseña";
+"login_view_controller_error_login" = "Error: Usuario incorrecto";
+"login_view_controller_error_password" = "Error: Usuario y/o contraseña incorrecta";
+"login_view_controller_login_button" = "INICIAR SESIÓN";
+"login_view_controller_register_button" = "Registarse";
+"login_view_controller_authentification_biometric" = "Autenticación requerida para acceder a tus chats";
+"login_view_controller_authentification_failed" = "No fue posible verificar tu identidad";
+"login_view_controller_authentification_cancel" = "La autenticación fue cancelada";
+"login_view_controller_biometric_alert" = "Biometría no disponible";
+"login_view_controller_biometric_alert_message" = "Por favor, activa Touch ID/Face ID en los ajustes de tu dispositivo";
+"login_view_controller_authentification_touchID_cancel" = "Touch ID está bloqueado. Por favor, usa tu código de desbloqueo";
+"login_view_controller_authentification_touchID_not_available" = "Touch ID no está disponible en este dispositivo";
+"login_view_controller_authentification_code" = "Has seleccionado usar tu código de desbloqueo";
+"login_view_controller_authentification_error" = "Ocurrió un error al intentar la autenticación. Intenta nuevamente o usa tu login y contraseña";
+"login_view_controller_authentification_alert_error" = "Error de Autenticación";
+"login_view_model_validation_error" = "Error falta el login";
+"login_view_model_validation_error_password" = "Error falta el password";
+"login_view_model_validation_user_error" = "Usuario o contraseña incorrecta";
+"cell_contact_list_table_view_cell_title" = "Sin nombre";
+"cell_contact_list_table_view_cell_message_default" = "Mensaje por defecto de VassQuick";
+"contact_list_view_controller_refresh" = "Refrescando...";
+"contact_list_view_controller_error_cell" = "Error en la celda";
+"profile_setting_view_title" = "Nombre de usuario";
+"profile_setting_view_placeholder_password" = "Contraseña";
+"profile_setting_view_biometric" = "Activar Biometría";
+"profile_setting_view_created_date" = "Creada";
+"profile_setting_view_platform" = "Plataforma";
+"profile_setting_view_updated_date" = "Actualizada";
+"profile_setting_view_select_image" = "Seleccionar Imagen";
+"profile_setting_view_save_changes" = "Guardar cambios";
+"profile_setting_view_alert_saved" = "Guardado";
+"profile_setting_view_alert_saved_message" = "Datos guardados con exito";
+"profile_setting_view_placeholder_nick" = "Nick";
+"contact_list_view_controller_title" = "Usuarios";
+"login_view_controller_remember_user" = "Recordar inicio de sesión";
+"contact_list_view_controller_number_of_users" = "Contactos";

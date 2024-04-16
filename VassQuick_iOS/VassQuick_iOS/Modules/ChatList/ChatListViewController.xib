@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatListViewController" customModule="VassQuick_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="btContactListButton" destination="uRm-WI-lrB" id="Iis-tL-g4V"/>
+                <outlet property="btProfileButton" destination="0ly-o0-Mb5" id="Wgo-a2-S3E"/>
+                <outlet property="lbTitleChats" destination="NI2-PT-Sr9" id="z7T-Gu-JCo"/>
+                <outlet property="sbChatsSearchBar" destination="8l1-ul-OZa" id="VP5-hX-Dm3"/>
+                <outlet property="svButtonsStackView" destination="G3R-RI-Yja" id="PcT-aF-Qqv"/>
+                <outlet property="tvChatsTableView" destination="G6w-UH-yUF" id="JC8-CD-LX8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbI-72-WHO">
+                    <rect key="frame" x="0.0" y="195.66666666666669" width="393" height="622.33333333333326"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="G3R-RI-Yja">
+                    <rect key="frame" x="0.0" y="59" width="393" height="34.333333333333343"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ly-o0-Mb5">
+                            <rect key="frame" x="0.0" y="0.0" width="47.666666666666664" height="34.333333333333336"/>
+                            <color key="tintColor" red="0.29411764709999999" green="0.73725490199999999" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system"/>
+                            <connections>
+                                <action selector="btTapProfileButton:" destination="-1" eventType="touchUpInside" id="xaf-qe-Ra1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRm-WI-lrB">
+                            <rect key="frame" x="343.33333333333331" y="0.0" width="49.666666666666686" height="34.333333333333336"/>
+                            <color key="tintColor" red="0.29411764705882354" green="0.73725490196078436" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="btTapContactListButton:" destination="-1" eventType="touchUpInside" id="xG4-5k-GCo"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI2-PT-Sr9">
+                    <rect key="frame" x="8" y="93.333333333333329" width="385" height="38.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8l1-ul-OZa">
+                    <rect key="frame" x="0.0" y="131.66666666666666" width="393" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="HeW-zL-LLE"/>
+                    </constraints>
+                    <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="kH6-vg-nLV"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="G6w-UH-yUF">
+                    <rect key="frame" x="0.0" y="195.66666666666669" width="393" height="622.33333333333326"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8l1-ul-OZa" firstAttribute="top" secondItem="NI2-PT-Sr9" secondAttribute="bottom" id="1xM-xq-ePP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RbI-72-WHO" secondAttribute="trailing" id="5Ee-cE-WZX"/>
+                <constraint firstItem="NI2-PT-Sr9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="5SS-1T-83B"/>
+                <constraint firstItem="RbI-72-WHO" firstAttribute="top" secondItem="8l1-ul-OZa" secondAttribute="bottom" id="69e-Ep-e2Y"/>
+                <constraint firstItem="G3R-RI-Yja" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B6M-jh-S1t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NI2-PT-Sr9" secondAttribute="trailing" id="GW2-rR-0cb"/>
+                <constraint firstItem="8l1-ul-OZa" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="H4U-NU-BOG"/>
+                <constraint firstItem="G6w-UH-yUF" firstAttribute="top" secondItem="8l1-ul-OZa" secondAttribute="bottom" identifier="TopConstraint" id="HP5-DB-9I9"/>
+                <constraint firstItem="RbI-72-WHO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I15-3R-f5u"/>
+                <constraint firstItem="G6w-UH-yUF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LBa-me-ANB"/>
+                <constraint firstItem="G3R-RI-Yja" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="V2T-jL-KwR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G6w-UH-yUF" secondAttribute="trailing" id="VPw-E0-bZs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="G6w-UH-yUF" secondAttribute="bottom" id="h4a-0x-tbP"/>
+                <constraint firstItem="NI2-PT-Sr9" firstAttribute="top" secondItem="G3R-RI-Yja" secondAttribute="bottom" id="qw7-8O-Pef"/>
+                <constraint firstItem="8l1-ul-OZa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uZd-at-IrF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RbI-72-WHO" secondAttribute="bottom" id="v2d-ha-OVY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G3R-RI-Yja" secondAttribute="trailing" id="xzh-IC-g6E"/>
+            </constraints>
+            <point key="canvasLocation" x="-74" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
