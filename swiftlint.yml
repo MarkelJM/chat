@@ -1,0 +1,56 @@
+disabled_rules: # rule identifiers to exclude from running
+  - nesting
+  - trailing_whitespace
+  - identifier_name
+
+opt_in_rules: # some rules are only opt-in
+  - convenience_type
+  - empty_count
+  - empty_string
+  - fatal_error_message
+  - first_where
+  - modifier_order
+  - toggle_bool
+  - unavailable_function
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - Templates
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+cyclomatic_complexity: 20
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length:
+    warning: 200
+    ignores_comments: true
+    ignores_function_declarations: true
+# they can set both implicitly with an array
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+function_body_length:
+  warning: 40
+  error: 80
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 2 # only warning
+  max_length: # warning and error
+    warning: 50
+    error: 70
+  excluded:
+    - IN
+    - OUT
+identifier_name:
+  min_length: # only min_length
+    error: 2
+  excluded: # excluded via string array
+    - id
+reporter: "xcode"
