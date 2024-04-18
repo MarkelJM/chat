@@ -6,7 +6,6 @@
 //
 
 import Combine
-import IQKeyboardManagerSwift
 import UIKit
 
 class MessageListViewController: UIViewController {
@@ -37,18 +36,6 @@ class MessageListViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        IQKeyboardManager.shared.enable = false
-        navigationItem.leftBarButtonItem?.tintColor = .blue40
-        navigationController?.navigationBar.backgroundColor = .black
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        IQKeyboardManager.shared.enable = true
     }
     
     @IBAction func sendMessageButtonTapped(_ sender: UIButton) {

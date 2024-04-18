@@ -32,6 +32,7 @@ class ApiClientLoginManager: ApiClientManager {
         }
         
         let relativePath = "/api/users/biometric"
+        
         let headers: HTTPHeaders = [
             "Authorization": token
         ]

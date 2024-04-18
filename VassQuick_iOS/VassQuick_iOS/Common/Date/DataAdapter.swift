@@ -28,13 +28,13 @@ extension Date {
         return formatter.string(from: date)
     }
     
-    // Formatea la hora a "dia/mes/año hora:minuto".
+    // Formatea la hora a "hora:minuto:segundo".
     static func formatTimeChat(from isoDate: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
         guard let date = formatter.date(from: isoDate) else { return "" }
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        formatter.dateFormat = "dd-MM / HH:mm"
         return formatter.string(from: date)
     }
 }

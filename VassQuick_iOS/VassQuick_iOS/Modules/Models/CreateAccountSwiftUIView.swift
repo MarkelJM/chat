@@ -88,28 +88,31 @@ struct CreateAccountSwiftUIView: View {
                 HStack {
                     Text("create_account_acept".localized)
                         .foregroundColor(.white)
-                        .font(.footnote)
-                        .lineLimit(1)
+                        .font(.body)
+                    
                     
                     NavigationLink(destination: WebView(url: "https://cloud.google.com/policy-intelligence/docs/iam-simulator-overview?hl=es-419")) {
                         Text("create_account_terms_and_conditions".localized)
                             .foregroundColor(Color.blue40)
-                            .font(.footnote)
+                            .font(.body)
                             .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+
                     }
+                    
                     
                     Spacer()
                     
                     Toggle("", isOn: $agreedToTerms)
                         .foregroundColor(.white)
-                        .font(.subheadline)
+                        .font(.body)
                         .padding(.trailing, 10)
-                        .frame(width: 50, height: 30)
                 }
                 .padding(.leading, 36)
                 .padding(.trailing, 36)
                 .padding(.top, 24)
                 
+
                 Spacer()
 
                 // SingUpButton
@@ -144,7 +147,7 @@ struct CreateAccountSwiftUIView: View {
                         self.dismiss?()
                         self.navigateBackToLogin?()
                     } label: {
-                        Text("create_account_login_back".localized)
+                        Text("create_account_login".localized)
                             .foregroundColor(Color.blue40)
 
                     }

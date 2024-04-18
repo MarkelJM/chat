@@ -58,10 +58,17 @@ class MessageListViewModel {
             }, receiveValue: { [weak self] (count, messages) in
                 print("Number of older messages: \(count)")
                 print("Mensajes antiguos: \(messages)")
+                /*
+                let newMessages = messages.sorted(by: { Int($0.id)! > Int($1.id)! })
+                self?.messages = (self?.messages ?? []) + newMessages
+                self?.messages.sort(by: { Int($0.id)! > Int($1.id)! })
+                 */
                 let newMessagesSorted = messages.compactMap { message -> (Int, MessageListModel)? in
                     guard let idInt = Int(message.id) else { return nil }
                     return (idInt, message)
                 }.sorted(by: { $0.0 < $1.0 })
+                
+                // Luego, extraemos solo la parte de MessageListModel de cada tupla y la añadimos a la lista de mensajes.
                 let newMessages = newMessagesSorted.map { $0.1 }
                 self?.messages.append(contentsOf: newMessages)
             })
@@ -88,4 +95,5 @@ class MessageListViewModel {
             })
             .store(in: &cancellables)
     }
+
 }

@@ -12,11 +12,13 @@ class ChatListDataManager {
 
     // MARK: - Properties
     var chatApiClient: ChatListApiClient
+    var apiClient: ApiClientManager
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Init
-    init(chatApiClient: ChatListApiClient) {
+    init(chatApiClient: ChatListApiClient, apiClient: ApiClientManager) {
         self.chatApiClient = chatApiClient
+        self.apiClient = apiClient
     }
     
     // MARK: - Methods
@@ -54,7 +56,7 @@ class ChatListDataManager {
     }
     
     func getLastMessageInfo(chatID: String) -> AnyPublisher<MessageListResponse, BaseError> {
-        return chatApiClient.getMessagesList(chatID: chatID)
+        return apiClient.getMessagesList(chatID: chatID)
             .catch { error -> AnyPublisher<MessageListResponse, BaseError> in
                 return Fail(error: BaseError.network(description: "Network error: \(error.localizedDescription)")).eraseToAnyPublisher()
             }

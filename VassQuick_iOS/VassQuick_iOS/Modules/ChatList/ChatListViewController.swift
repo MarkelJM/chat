@@ -16,7 +16,6 @@ class ChatListViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     private let refreshControl = UIRefreshControl()
     private var keyChainManager = KeyChainManager.shared
-    private var sizeOfTable: CGFloat = 56
 
     // MARK: - Outlets
     @IBOutlet weak var svButtonsStackView: UIStackView!
@@ -153,7 +152,7 @@ class ChatListViewController: UIViewController {
 extension ChatListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        sizeOfTable
+        48
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

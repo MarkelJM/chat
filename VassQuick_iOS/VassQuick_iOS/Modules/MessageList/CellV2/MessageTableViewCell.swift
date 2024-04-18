@@ -89,7 +89,38 @@ class MessageTableViewCell: UITableViewCell {
             dateLabel.bottomAnchor.constraint(equalTo: bubbleBackgroundView.bottomAnchor, constant: -bubblePadding)
         ])
     }
+    /*
+    func configure(with message: String, date: String, isCurrentUser: Bool) {
+        messageLabel.text = message
+        dateLabel.text = date
+        
+        bubbleBackgroundView.backgroundColor = isCurrentUser ? .systemBlue : .systemCyan
+        messageLabel.textAlignment = isCurrentUser ? .right : .left
+        dateLabel.textAlignment = isCurrentUser ? .right : .left
+        
+        messageLabel.textAlignment = .left
+        dateLabel.textAlignment = isCurrentUser ? .right : .left
 
+        // Adjust Constraints for User
+        leadingConstraint.isActive = !isCurrentUser
+        trailingConstraint.isActive = isCurrentUser
+        
+        // Priority Adjustment for Content Hugging
+        messageLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
+        dateLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
+        
+        if isCurrentUser {
+            trailingConstraint.constant = -16
+            leadingConstraint.constant = CGFloat.greatestFiniteMagnitude
+        } else {
+            leadingConstraint.constant = 16
+            trailingConstraint.constant = -CGFloat.greatestFiniteMagnitude
+        }
+        
+        // Force Layout
+        layoutIfNeeded()
+    }
+     */
     func configure(with message: String, date: String, isCurrentUser: Bool) {
         messageLabel.text = message
         dateLabel.text = date
@@ -125,6 +156,7 @@ class MessageTableViewCell: UITableViewCell {
         // Forzar actualización del layout
         layoutIfNeeded()
     }
+
 
     override func prepareForReuse() {
         super.prepareForReuse()

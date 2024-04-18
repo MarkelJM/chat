@@ -131,5 +131,6 @@ class LoginViewModel {
     
     func removeUserId() {
          dataManager.removeCurrentUserId()
+
     }
 }

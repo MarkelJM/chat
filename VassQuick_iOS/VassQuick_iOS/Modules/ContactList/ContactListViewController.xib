@@ -11,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactListViewController" customModule="VassQuick_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="lbContactListLabel" destination="bGb-Gx-sCO" id="VVs-bA-ySh"/>
-                <outlet property="lbNumberOfUsers" destination="3qW-vF-Bgw" id="FEr-Zx-d8v"/>
                 <outlet property="sbSearchBarContactList" destination="6qg-8j-BAW" id="5KI-ex-QEK"/>
                 <outlet property="tvContactListTableView" destination="xhR-aC-WJW" id="gFV-P2-XEX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,48 +21,39 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-Gx-sCO">
-                    <rect key="frame" x="16" y="59" width="377" height="38.333333333333343"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-vF-Bgw">
-                    <rect key="frame" x="16" y="97.333333333333329" width="377" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xhR-aC-WJW">
-                    <rect key="frame" x="16" y="198.33333333333331" width="361" height="637.66666666666674"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6qg-8j-BAW">
-                    <rect key="frame" x="16" y="134.33333333333334" width="361" height="56"/>
+                    <rect key="frame" x="0.0" y="90.333333333333329" width="393" height="55.999999999999986"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="RC5-aU-jf1"/>
                     </connections>
                 </searchBar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-Gx-sCO">
+                    <rect key="frame" x="16" y="59.000000000000007" width="377" height="31.333333333333336"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xhR-aC-WJW">
+                    <rect key="frame" x="0.0" y="146.33333333333331" width="393" height="671.66666666666674"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="3qW-vF-Bgw" firstAttribute="top" secondItem="bGb-Gx-sCO" secondAttribute="bottom" id="0v9-bw-yjc"/>
-                <constraint firstItem="xhR-aC-WJW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="6lf-8Y-Epw"/>
-                <constraint firstItem="bGb-Gx-sCO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="85M-5V-aYM"/>
-                <constraint firstItem="3qW-vF-Bgw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Car-pN-wJU"/>
-                <constraint firstItem="xhR-aC-WJW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="GJ5-TH-fq3"/>
-                <constraint firstItem="xhR-aC-WJW" firstAttribute="top" secondItem="6qg-8j-BAW" secondAttribute="bottom" constant="8" id="Lrl-Ds-Hxk"/>
-                <constraint firstAttribute="bottom" secondItem="xhR-aC-WJW" secondAttribute="bottom" constant="16" id="NnQ-Po-HCK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3qW-vF-Bgw" secondAttribute="trailing" id="OJ3-qA-jcf"/>
-                <constraint firstItem="6qg-8j-BAW" firstAttribute="top" secondItem="3qW-vF-Bgw" secondAttribute="bottom" constant="16" id="Shi-vW-DaJ"/>
-                <constraint firstItem="bGb-Gx-sCO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="evF-Q0-sAr"/>
-                <constraint firstItem="6qg-8j-BAW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="gpC-hO-SAi"/>
-                <constraint firstItem="6qg-8j-BAW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jkT-rs-3df"/>
-                <constraint firstItem="bGb-Gx-sCO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wm6-qz-jXG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xhR-aC-WJW" secondAttribute="trailing" id="0Av-0W-lss"/>
+                <constraint firstItem="bGb-Gx-sCO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Bhm-0t-h9k"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bGb-Gx-sCO" secondAttribute="trailing" id="D6g-zP-zky"/>
+                <constraint firstItem="bGb-Gx-sCO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Y1v-Im-3KS"/>
+                <constraint firstItem="6qg-8j-BAW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ZrX-ON-CEK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xhR-aC-WJW" secondAttribute="bottom" id="cDB-a3-5Ds"/>
+                <constraint firstItem="xhR-aC-WJW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="d2K-uh-bE2"/>
+                <constraint firstItem="6qg-8j-BAW" firstAttribute="top" secondItem="bGb-Gx-sCO" secondAttribute="bottom" id="iKg-N5-Ddt"/>
+                <constraint firstItem="6qg-8j-BAW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nAk-Yv-wGG"/>
+                <constraint firstItem="xhR-aC-WJW" firstAttribute="top" secondItem="6qg-8j-BAW" secondAttribute="bottom" id="rIP-KN-3L9"/>
             </constraints>
-            <point key="canvasLocation" x="135.1145038167939" y="20.422535211267608"/>
+            <point key="canvasLocation" x="136" y="21"/>
         </view>
     </objects>
     <resources>

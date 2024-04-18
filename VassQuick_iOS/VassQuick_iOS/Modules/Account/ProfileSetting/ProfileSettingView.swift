@@ -68,6 +68,7 @@ struct ProfileSettingView: View {
                     .foregroundColor(.white)
                 
                 HStack {
+                    
                     Button {
                         showingImagePicker = true
                     } label: {
@@ -86,6 +87,7 @@ struct ProfileSettingView: View {
                     .buttonStyle(PlainButtonStyle())
                     
                     Button {
+
                         viewModel.updateUserProfile()
                         if let inputImage = inputImage {
                             viewModel.selectedImage = inputImage
@@ -107,6 +109,7 @@ struct ProfileSettingView: View {
                         .background(Color.blue40)
                         .cornerRadius(8)
                     }
+                    //.buttonStyle(FilledButton())
                     .buttonStyle(PlainButtonStyle())
 
                 }
