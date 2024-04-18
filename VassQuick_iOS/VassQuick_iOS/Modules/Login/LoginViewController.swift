@@ -30,7 +30,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var swRememberUserSwitch: UISwitch!
     @IBOutlet weak var btBiometricAuth: UIButton!
     @IBOutlet weak var lbNotAnAccount: UILabel!
-    @IBOutlet weak var vwLoadingView: UIView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -42,6 +41,7 @@ class LoginViewController: UIViewController {
         btBiometricAuth.isEnabled = false
         viewModel.updateBiometricAuthButtonState()
         adjustForRememberUserSwitchState()
+        
         checkRememberUserStatus()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -53,7 +53,9 @@ class LoginViewController: UIViewController {
             KeyChainManager.shared.deleteToken()
         } else {
             _ = swRememberUserSwitch.isOn
+
         }
+ 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,7 +173,6 @@ class LoginViewController: UIViewController {
         }
         
         lbNotAnAccount.text = "login_view_controller_not_an_account".localized
-        lbRememberUserLabel.text = "login_view_controller_remember_user".localized
         
         viewModel.removeUserId()
     }
@@ -198,6 +199,7 @@ class LoginViewController: UIViewController {
     private func configureTextFieldDelegate() {
         tfLogin.delegate = self
         tfPassword.delegate = self
+        
         btLogin.isEnabled = false
     }
 
@@ -238,7 +240,6 @@ class LoginViewController: UIViewController {
     @IBAction func tappedLogin(_ sender: UIButton) {
         lbErrorLogin.isHidden = true
         lbErrorPassword.isHidden = true
-        vwLoadingView.isHidden = false
 
         guard let login = tfLogin.text, !login.isEmpty,
               let password = tfPassword.text, !password.isEmpty else {
@@ -255,7 +256,6 @@ class LoginViewController: UIViewController {
                 case .failure:
                     self?.lbErrorLogin.isHidden = true
                     self?.lbErrorPassword.isHidden = false
-                    self?.vwLoadingView.isHidden = true
                 case .finished:
                     break
                 }
@@ -268,7 +268,7 @@ class LoginViewController: UIViewController {
                 }
                 self?.navigateToContactList()
             })
-            .store(in: &cancellables)        
+            .store(in: &cancellables)
     }
     
     func activateBiometri() {

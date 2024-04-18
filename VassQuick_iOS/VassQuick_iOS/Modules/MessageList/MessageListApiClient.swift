@@ -31,4 +31,5 @@ class MessageListApiClient: ApiClientManager {
         
         return requestPublisher(relativePath: relativePath, method: .post, parameters: parameters, urlEncoding: JSONEncoding.default, type: MessageNewResponse.self, customHeaders: headers)
     }
+    
 }

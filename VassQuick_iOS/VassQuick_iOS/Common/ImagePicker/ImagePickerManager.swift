@@ -58,6 +58,7 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         viewController?.present(alert, animated: true, completion: nil)
     }
     
+    // UIImagePickerControllerDelegate Methods
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let image = info[.originalImage] as? UIImage {

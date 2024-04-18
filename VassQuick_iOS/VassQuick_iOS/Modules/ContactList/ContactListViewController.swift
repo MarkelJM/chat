@@ -14,13 +14,11 @@ class ContactListViewController: UIViewController {
     private var viewModel: ContactListViewModel?
     private var cancellables = Set<AnyCancellable>()
     private let refreshControl = UIRefreshControl()
-    private var sizeOfTable: CGFloat = 56
 
     // MARK: - Outlets
     @IBOutlet weak var sbSearchBarContactList: UISearchBar!
     @IBOutlet weak var lbContactListLabel: UILabel!
     @IBOutlet weak var tvContactListTableView: UITableView!
-    @IBOutlet weak var lbNumberOfUsers: UILabel!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -28,7 +26,6 @@ class ContactListViewController: UIViewController {
         configureSearchBar()
         configureTableView()
         bindViewModel()
-        configureNavigationAppearance()
         viewModel?.activateRefreshTrigger()
         viewModel?.fetchUsers()
         setupNavigationBinding()
@@ -47,19 +44,6 @@ class ContactListViewController: UIViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "contact_list_view_controller_refresh".localized)
         refreshControl.addTarget(self, action: #selector(refreshContactList), for: .valueChanged)
         tvContactListTableView.refreshControl = refreshControl
-        
-        lbContactListLabel.text = "contact_list_view_controller_title".localized
-    }
-    
-    func configureNumberOfUsers() {
-        lbNumberOfUsers.text = "\(viewModel?.filteredUsers.count ?? 0) " +
-        "contact_list_view_controller_number_of_users".localized
-        lbNumberOfUsers.font = .systemFont(ofSize: 18)
-        lbNumberOfUsers.textColor = .white
-    }
-    
-    private func configureNavigationAppearance() {
-        navigationController?.navigationBar.tintColor = .blue40
     }
     
     private func configureSearchBar() {
@@ -84,7 +68,6 @@ class ContactListViewController: UIViewController {
             .sink { [weak self] _ in
                 self?.tvContactListTableView.reloadData()
                 self?.refreshControl.endRefreshing()
-                self?.configureNumberOfUsers()
             }
             .store(in: &cancellables)
     }
@@ -114,8 +97,7 @@ extension ContactListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        sizeOfTable
-
+        48
     }
 
 }

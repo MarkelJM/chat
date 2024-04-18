@@ -105,4 +105,5 @@ class ContactListViewModel {
             })
             .store(in: &cancellables)
     }
+
 }

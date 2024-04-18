@@ -54,4 +54,5 @@ class MessageListDataManager {
     func postNewMessage(chatID: String, sourceID: String, message: String) -> AnyPublisher<MessageNewResponse, BaseError> {
         apiClient.postNewMessage(chatID: chatID, sourceID: sourceID, message: message)
     }
+
 }

@@ -31,7 +31,6 @@ class ChatListTableViewCell: UITableViewCell {
         
         lbName.text = chatView.targetnick
         lbDateLastMessage.text = Date.formatDate(from: chatView.chatcreated)
-        lbDateLastMessage.textColor = .grey40
         
         let baseURL = "https://mock-movilidad.vass.es/chatvass"
         let imageURL = baseURL + chatView.targetavatar
@@ -41,13 +40,10 @@ class ChatListTableViewCell: UITableViewCell {
         } else {
             ivCellImage.image = UIImage(systemName: "person.crop.circle")
         }
-        ivCellImage.tintColor = .grey40
+        ivCellImage.tintColor = .lightGray
         
         lbName.textColor = .white
-        lbDateLastMessage.textColor = .grey40
-        
-        lbMessageInformation.textColor = .grey40
-        lbMessageInformation.font = UIFont.systemFont(ofSize: 12)
+        lbDateLastMessage.textColor = .white
         
         btOnlineStatus.tintColor = chatView.targetonline ? .green : .red
         btOnlineStatus.backgroundColor = .clear
@@ -55,6 +51,8 @@ class ChatListTableViewCell: UITableViewCell {
         
         lbDateLastMessage.text = lastMessageDate
         lbMessageInformation.text = lastMessage
+        
+        //getLastMessageInfo(chatID: chatView.chat)
     }
     
     // MARK: Private Methods
@@ -82,4 +80,33 @@ class ChatListTableViewCell: UITableViewCell {
             }
         }.resume()
     }
+    
+    
+    /*
+    private func getLastMessageInfo(chatID: String) {
+        apiClient.getMessagesList(chatID: chatID)
+            .sink(receiveCompletion: { completion in
+                if case let .failure(error) = completion {
+                    print("Error fetching messages: \(error)")
+                }
+            }, receiveValue: { [weak self] messageListResponse in
+                guard let self = self else { return }
+                if let lastMessage = messageListResponse.rows.first {
+                    DispatchQueue.main.async {
+                        self.lbMessageInformation.text = lastMessage.message
+                        self.lbDateLastMessage.text = Date.formatTimeChat(from: lastMessage.date)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.lbMessageInformation.text =
+                        "cell_chat_list_view_table_view_cell_message_empty".localized
+                        self.lbDateLastMessage.text = ""
+                        
+                    }
+                }
+            })
+            .store(in: &cancellables)
+    }
+     */
+    
 }

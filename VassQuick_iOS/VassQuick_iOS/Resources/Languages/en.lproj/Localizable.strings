@@ -7,8 +7,8 @@
 */
 
 "create_account_registration" = "Register";
-"create_account_nick" = "Username";
-"create_account_login" = "Email";
+"create_account_nick" = "Nick";
+"create_account_login" = "Login";
 "create_account_password" = "Password";
 "create_account_password_repeat" = "Repeat password";
 "create_account_sign_up_button" = "Sign Up";
@@ -21,12 +21,11 @@
 "create_account_alert" = "Alert";
 "create_account_error" = "Error, try again";
 "create_account_web_view_back" = "Back";
-"create_account_login_back" = "Login";
 "chat_list_view_controller_view_profile" = "View Profile";
 "chat_list_view_controller_log_out" = "Log Out";
 "chat_list_view_controller_cancel" = "Cancel";
 "chat_list_view_controller_delete_chat" = "Delete";
-"chat_list_view_controller_search_bar_placeholder" = "Search chat";
+"chat_list_view_controller_search_bar_placeholder" = "Search...";
 "chat_list_view_controller_refresh" = "Refresh";
 "cell_chat_list_view_table_view_cell_message_empty" = "No messages yet";
 "login_view_controller_not_an_account" = "Not an account?";
@@ -65,6 +64,3 @@
 "profile_setting_view_alert_saved" = "Saved";
 "profile_setting_view_alert_saved_message" = "Saved with success";
 "profile_setting_view_placeholder_nick" = "Nick";
-"contact_list_view_controller_title" = "Users";
-"login_view_controller_remember_user" = "Remember user";
-"contact_list_view_controller_number_of_users" = "Contacts";

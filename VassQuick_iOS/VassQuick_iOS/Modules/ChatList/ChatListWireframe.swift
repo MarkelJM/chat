@@ -14,7 +14,10 @@ class ChatListWireframe {
         
         let viewController = ChatListViewController()
         let chatApiClient = ChatListApiClient()
-        let dataManager: ChatListDataManager = createDataManager(with: chatApiClient)
+        let apiClient = ApiClientManager()
+
+        
+        let dataManager: ChatListDataManager = createDataManager(with: chatApiClient, apiClient: apiClient)
         let viewModel: ChatListViewModel = createViewModel(with: dataManager)
         
         viewController.set(viewModel: viewModel)
@@ -22,8 +25,8 @@ class ChatListWireframe {
     }
     
     // MARK: - Private methods
-    private func createDataManager(with chatApiClient: ChatListApiClient) -> ChatListDataManager {
-        ChatListDataManager(chatApiClient: chatApiClient)
+    private func createDataManager(with chatApiClient: ChatListApiClient, apiClient: ApiClientManager) -> ChatListDataManager {
+        ChatListDataManager(chatApiClient: chatApiClient, apiClient: apiClient)
     }
     
     private func createViewModel(with dataManager: ChatListDataManager) -> ChatListViewModel {

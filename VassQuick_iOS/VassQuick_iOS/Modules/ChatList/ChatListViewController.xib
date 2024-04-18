@@ -33,7 +33,6 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ly-o0-Mb5">
                             <rect key="frame" x="0.0" y="0.0" width="47.666666666666664" height="34.333333333333336"/>
-                            <color key="tintColor" red="0.29411764709999999" green="0.73725490199999999" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                             <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system"/>
                             <connections>
                                 <action selector="btTapProfileButton:" destination="-1" eventType="touchUpInside" id="xaf-qe-Ra1"/>
@@ -41,7 +40,6 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRm-WI-lrB">
                             <rect key="frame" x="343.33333333333331" y="0.0" width="49.666666666666686" height="34.333333333333336"/>
-                            <color key="tintColor" red="0.29411764705882354" green="0.73725490196078436" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                             <buttonConfiguration key="configuration" style="plain"/>
                             <connections>
                                 <action selector="btTapContactListButton:" destination="-1" eventType="touchUpInside" id="xG4-5k-GCo"/>

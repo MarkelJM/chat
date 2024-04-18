@@ -30,7 +30,7 @@ class CellContactListTableViewCell: UITableViewCell {
         if let avatarUrlString = user.avatar, let avatarUrl = URL(string: avatarUrlString), !avatarUrlString.isEmpty {
         } else {
             imImageViewContact.image = defaultAvatar
-            imImageViewContact.tintColor = .grey40
+            imImageViewContact.tintColor = .lightGray
         }
     }
 }

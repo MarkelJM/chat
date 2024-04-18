@@ -10,8 +10,6 @@ import SwiftUI
 import Combine
 
 class ProfileSettingViewModel: ObservableObject {
-    
-    // MARK: - Properties
     @Published var user: User?
     @Published var isBiometricEnabled: Bool = UserDefaults.standard.bool(forKey: "isBiometricEnabled") {
         didSet {
@@ -26,13 +24,11 @@ class ProfileSettingViewModel: ObservableObject {
     private let dataManager: ProfileDataManager
     private var cancellables = Set<AnyCancellable>()
     
-    // MARK: - Init
     init(dataManager: ProfileDataManager) {
         self.dataManager = dataManager
         getUserProfile()
     }
     
-    // MARK: - Public methods
     func getUserProfile() {
         guard let token = KeyChainManager.shared.getToken() else {
             return
@@ -52,7 +48,7 @@ class ProfileSettingViewModel: ObservableObject {
             return
         }
         
-        let newNick = nick.isEmpty ? user?.nick : nick 
+        let newNick = nick.isEmpty ? user?.nick : nick // Si esta vacio el campo usamos el del comienzo
         let newPassword = password.isEmpty ? user?.password : password
         
         let updateRequest = UserUpdateRequest(password: newPassword ?? "", nick: newNick ?? "")

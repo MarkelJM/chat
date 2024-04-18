@@ -53,6 +53,7 @@ class ContactListDataManager {
             .flatMap { currentUserId in
                 self.chatApiClient.getViewedChats()
                     .map { viewedChats -> String? in
+                        // Busca el ID del chat entre el usuario actual y el usuario objetivo.
                         let chatId = viewedChats.first { chatView in
                             (chatView.source == currentUserId && chatView.target == targetId) ||
                             (chatView.target == currentUserId && chatView.source == targetId)

@@ -57,4 +57,5 @@ class CreateAccountSwiftUIViewModel: ObservableObject {
         }
         registerUser()
     }
+
 }

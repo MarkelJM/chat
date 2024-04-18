@@ -35,6 +35,7 @@ final class ChatListApiClient: ApiClientManager {
         }
         
         let headers = ["Authorization": token]
+        
         var relativePath = "api/chats/"
         relativePath += chatID
 
